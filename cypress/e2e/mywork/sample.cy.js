@@ -1,6 +1,6 @@
 describe('test name', () => {
 
-  beforeEach(function () {
+  before(function () {
     cy.visit('https://google.com')
     
   })
@@ -40,6 +40,20 @@ describe('test name', () => {
     })
 
 
+  })
+
+  it('Get Browser Properties',()=>{
+
+
+    cy.window().then((win) => {
+      const browserName = win.location;
+      // const browserVersion = win.navigator.appVersion;
+      // const userAgent = win.navigator.userAgent;
+      console.log('browserName',browserName);
+      });
+ 
+      // console.log('browserVersion',browserVersion);
+      // console.log('userAgent',userAgent);
   })
 
 
