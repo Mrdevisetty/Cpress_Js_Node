@@ -3,21 +3,23 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules\\.bin\\cypress run",
-    "headertest": "npm run test -- --headed",
-    "chrometest": "npm run test -- --browser chrome"
+    "test": "npx cypress run --headed",
+    "headertest": "npm run test --headed true",
+    "chrometest": "npm run test -- --browser chrome -- --reporter mochawesome",
+    "cy:parallel": "cypress-parallel -d cypress/e2e/mywork/ -t 2 -s test"
   },
   "keywords": [],
   "author": "Venkat Devisetty",
   "license": "ISC",
   "description": "Cypress Works space for samples",
   "devDependencies": {
-    "cypress": "^13.15.0",
+    "cypress": "^13.16.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-xpath": "^2.0.1"
   },
   "dependencies": {
     "cypress_ws": "file:",
+    "cypress-parallel": "^0.14.0",
     "mochawesome": "^7.1.3"
   }
 }
